@@ -1,0 +1,56 @@
+{% extends 'heaven/login_home.html' %}
+{% block main %}
+<div class="container my-4">
+  <h2>Contact Us</h2>
+  <form method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="fullname">Full Name</label>
+      <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter Your Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="query">Select Your Query</label>
+      <select class="form-control" name="query" id="query">
+        <option>Blog</option>
+        <option>Reading Issue</option>
+        <option>Writing Issue</option>
+        <option>Other's</option>
+      </select>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">Are you a Writer?</div>
+      <div class="col-sm-10 ">
+        <div class="form-check">
+          <input class="form-check-input" name="writer" type="checkbox" id="gridCheck2">
+          <label class="form-check-label" for="gridCheck2">
+            Yes
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">Are you a Reader?</div>
+      <div class="col-sm-10 ">
+        <div class="form-check">
+          <input class="form-check-input" name="reader" type="checkbox" id="reader">
+          <label class="form-check-label" for="reader">
+            Yes
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="concern">Elaborate Your Concern</label>
+      <textarea class="form-control" name="concern" id="concern" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
